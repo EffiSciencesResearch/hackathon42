@@ -58,7 +58,6 @@ Evaluation criteria:
 - We check the code:
     - The training of a dataset must not use the other datasets
     - Do not use a pretrained model
-    - It is not allowed to use the crop function
     - It is allowed to look at the target set, but not allowed to classify by hand
 
 ## Installation
@@ -73,13 +72,15 @@ git clone https://github.com/EffiSciencesResearch/hackathon42.git
 
 ## Dataset details
 
+### INITIATION
+
 #### 0_toy_dataset (2pts)
 
 This dataset is a simple linear regression. This dataset corresponds to the simplest possible illustration of our problem. We have two features (x-axis and y-axis) which are corelated in the labeled set. The features are not corelated in the unlabeled set and in the target set (these two are in grey in the figure).
 
 ![alt text](assets/Toy_dataset.png "Toy Dataset")
 
-#### 1_mnist_cc (1pt)
+#### 01_mnist_cc (1pt)
 
 We use the mnist dataset to simulate misspecified datasets.
 We now have two features: left and right.
@@ -90,21 +91,7 @@ All other datasets are a variation of this dataset.
 
 In this dataset and in the following ones, the images are slightly noisy.
 
-#### 2_mnist_numbers_filter (1pt)
-
-Here, we use all classes, from 0 to 9 and not only [0, 1].
-
-#### 3_mnist_5rows (1pt)
-
-Instead of concatenating 2 images, we concatenate 5 images.
-
-#### 4_mnist_low_mix_rate (2pts)
-
-Some approaches work well when the unlabeled dataset is balanced across all image categories - but we cannot assume this to be true for arbitrary unlabeled datasets in nature. Unbalanced datasets can, of course, be rebalanced - however, this is akin to manual labeling and, as such, is prohibitively expensive and difficult to scale.
-
-Thus, in this exercise, we seek a method that works even with a low mixing rate. The mixing ratio is a real number between 0 and 1 that indicates the proportion of cross types (0/1 and 1/0) in the unlabeled data set. A mixture rate of 0 has only 0/0 and 1/1 (as in the labeled data set), a mixture rate of 0.5 has equal amounts in each category, while a mixture rate of 1 has only 0/1 and 1/0 cross types.
-
-#### 5_mnist_constant_image (1pt)
+#### 02_mnist_constant_image (1pt)
 
 In this task, we introduce the concept of Simplicity bias.  Simplicity Bias (SB) -- the tendency of standard training procedures such as stochastic gradient descent (SGD) to find simple models.
 
@@ -116,18 +103,36 @@ In this exercise, there are two features:
 
 It is much easier for the classifier to use the constant image on the right than the image on the left. However, in the target_set, only the left image will be predictive.
 
+### RANDOM POSITION 
 
-#### 6_mnist_constant_image_random_row (4pts)
+#### 03_mnist_constant_image_random_row (2pts)
 
-Same as the previous task but this time we randomize the left and the right.
+In this section, we randomize the left and right images + we add the simplicity bias problem.
 
-#### 7_mnist_uniform_color (1pt)
+#### 04_mnist_uniform_color_random_row (1pt)
 
 In this task, we exacerbate the simplicity bias by using an image that is a constant color depending on the label.
 
-#### 8_mnist_uniform_color_random_row (3pts)
+#### 05_mnist_uniform_color_low_mix_rate (2pts)
 
-Same as the previous task but this time we randomize the left and the right.
+Some approaches work well when the unlabeled dataset is balanced across all image categories - but we cannot assume this to be true for arbitrary unlabeled datasets in nature. Unbalanced datasets can, of course, be rebalanced - however, this is akin to manual labeling and, as such, is prohibitively expensive and difficult to scale.
+
+Thus, in this exercise, we seek a method that works even with a low mixing rate. The mixing ratio is a real number between 0 and 1 that indicates the proportion of cross types (0/1 and 1/0) in the unlabeled data set. A mixture rate of 0 has only 0/0 and 1/1 (as in the labeled data set), a mixture rate of 0.5 has equal amounts in each category, while a mixture rate of 1 has only 0/1 and 1/0 cross types.
+
+### SUM
+
+#### 06_mnist_sum (1pts)
+
+Same as 01_mnist_cc but we sum the left and right images.
+
+#### 07_mnist_sum_bis (1pts)
+
+Same as 06_mnist_sum but we sum 3 images.
+
+#### 08_mnist_sum_noise_level (1pts)
+
+We use the level of the gaussian noise as the simplicity biais.
+
 
 #### Mysterious datasets (5pts/mysterious dataset)
 
