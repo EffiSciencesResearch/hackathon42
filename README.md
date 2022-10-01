@@ -134,7 +134,7 @@ Same as 06_mnist_sum but we sum 3 images.
 We use the level of the gaussian noise as the simplicity biais.
 
 
-#### Mysterious datasets (5pts/mysterious dataset)
+### Mysterious datasets (5pts/mysterious dataset)
 
 In addition to the previous datasets, we add 3 datasets that can be processed independently, and independently with the rest of the hackathon.
 
