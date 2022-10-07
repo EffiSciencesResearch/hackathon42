@@ -136,9 +136,50 @@ We use the level of the gaussian noise as the simplicity biais.
 
 ### Mysterious datasets (5pts/mysterious dataset)
 
-In addition to the previous datasets, we add 3 datasets that can be processed independently, and independently with the rest of the hackathon.
+In addition to the previous datasets, we add 3 datasets (12, 13, 14) that can be processed independently, and independently with the rest of the hackathon.
 
-These exercises are highly valued and it is possible to win without finding a technique to solve the problems associated with datasets 1-8.
+These exercises are highly valued and it is possible to win without finding a technique to solve the problems associated with datasets 0-8.
+
+### How to get the 5 labels
+
+Revelation:
+
+POST https://leaderboard42.herokuapp.com/reveal/
+
+with the following form data:
+- `username`: `awesome_team`
+- `password`: `secret_password`
+- `exercise_id`: 3
+- `datum_id`: 456
+
+Example request with cURL:
+
+```bash
+$ curl -F username=awesome_team -F password=secret_password -F exercise_id=3 -F datum_id=456 https://leaderboard42.herokuapp.com/reveal/
+```
+
+Example request with [Requests](https://requests.readthedocs.io/en/latest/) in Python:
+
+```python
+>>> import requests
+>>> requests.post({uri}, data={{
+        'username': 'awesome_team',
+        'password': 'secret_password',
+        'exercise_id': 3,
+        'datum_id': 456
+    }})
+```
+
+
+### How to submit your solution
+
+Go to https://leaderboard42.herokuapp.com/
+
+And click on one exercice, and submit your solution.
+
+An example of submission is in the the file: [example_submision.csv]
+
+
 
 #### Bonus
 
