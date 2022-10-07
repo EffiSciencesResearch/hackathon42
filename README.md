@@ -177,8 +177,7 @@ Go to https://leaderboard42.herokuapp.com/
 
 And click on one exercice, and submit your solution.
 
-An example of submission is in the the file: [example_submision.csv]
-
+An example of submission format is in the the file: [example_submision.csv]
 
 
 #### Bonus
