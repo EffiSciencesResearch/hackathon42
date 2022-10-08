@@ -2,6 +2,8 @@
 
 The EffiSciences x Ecole42 hackathon will focus on Beneficial Artificial Intelligence: The weekend of Friday, October 14-16 will host presentations, workshops and training in AI Safety.
 
+![alt text](assets/hackathon.png "Hackathon IA Safety")
+
 ## The topic in a few words
 
 Some datasets are not well specified: let's take an example of a dataset that would contain images of camels in the desert, as well as images of cows in grasslands. The classifier must classify between images of camels and images of cows. But formulated as it is, the classifier could learn to classify the images not according to the animal, but according to the landscape: the dataset is underspecified because we have two features that are perfectly correlated (animal and landscape). In other words, the classifier can either decide to classify cow/camel or grassland/desert. And there is ambiguity when we try to classify an image of a camel in a grassland. The goal of this hackathon is to resolve these types of ambiguities.
