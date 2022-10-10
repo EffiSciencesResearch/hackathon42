@@ -3,3 +3,5 @@ datasets.zip
 mnist-data.pcl*
 *-checkpoint.ipynb
 Create_datasets_42.ipynb
+**/14_mnist_cc_no/**
+test.py
