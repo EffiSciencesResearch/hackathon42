@@ -48,9 +48,17 @@ This challenge is related to underspecification problems (D'Amour et al., 2020) 
 
 ## Rules of the game
 
-The total score is the sum of the accuracy achieved in the target sets of each data set. If participants do not submit data, they have a default score of 55% for each dataset. So submitting a dataset is taking a risk. It is better to submit nothing than to submit something bad.
+There are two types of prizes: leaderboard maximization awards, and jury awards.
 
-Participants will have to show their code to the jury and are free to ask the jury if they want to pitch a good idea. Even if they don't have a good score on the leaderboard, the jury will take these elements into consideration.
+### Leaderboard Maximization prize
+
+The total score is the sum of the accuracy achieved in the target sets of each data set. If participants do not submit data, they have a default score of 80% for each dataset. So submitting a dataset is taking a risk. It is better to submit nothing than to submit something bad.
+
+Participants must be able to explain their approach in order to win the award (Prologin style). But any strategy is allowed if it maximizes the ranking.
+
+### Jury prize
+
+For the jury prizes, participants will have to show their code to the jury and are free to ask the jury if they want to pitch a good idea. Even if they don't have a good score on the leaderboard, the jury will take these elements into consideration.
 
 Evaluation criteria:
 - We make the people who are in the top 20 of the leaderboard
@@ -60,7 +68,7 @@ Evaluation criteria:
 - We check the code:
     - The training of a dataset must not use the other datasets
     - Do not use a pretrained model
-    - It is allowed to look at the target set, but not allowed to classify by hand
+    - It is allowed to look at the target set, but not allowed to classify by hand.
 
 ## Installation
 
