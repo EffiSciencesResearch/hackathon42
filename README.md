@@ -13,7 +13,7 @@ The hackathon consists of a series of datasets (Toy dataset, MNIST, embeddings, 
 Each dataset contains:
 - a labeled set: which contains images with two or more perfectly corelated features.
 - an unlabeled set: which contains a mixture of images with perfectly corelated features and images with uncorrelated features
-- a target set: which must be labeled by the participants, and which contains a mixture of images with corelated features and images with uncorrelated assets.
+- a validation set: which must be labeled by the participants, and which contains a mixture of images with corelated features and images with uncorrelated assets.
 
 You must use the unlabeled sets to notice the ambiguity.
 
@@ -23,7 +23,7 @@ There is no penalty for requesting 5 labels instead of 1.
 
 Warning. Participants can only make one submission per dataset!
 
-The hackathon leaderboard can be found here: [TODO]
+The hackathon leaderboard can be found here: https://leaderboard42.herokuapp.com/
 
 ## Motivations
 
@@ -63,12 +63,16 @@ For the jury prizes, participants will have to show their code to the jury and a
 Evaluation criteria:
 - We make the people who are in the top 20 of the leaderboard
 - Interviews with the top 20 teams to understand their approaches
-- New methods will be strongly favored
+- New methods will be strongly favored.
+- A beautiful ML method will be strongly preferred.
 - Creative approaches that do not have good results will be valued
-- We check the code:
+- We will check the code:
     - The training of a dataset must not use the other datasets
     - Do not use a pretrained model
     - It is allowed to look at the target set, but not allowed to classify by hand.
+
+Any neural network interpretability techniques used to understand neural network computation will be highly valued.
+If your solution is generic, and works across datasets, it will be valued by the jury prize.
 
 ## Installation
 
@@ -195,14 +199,7 @@ Go to https://leaderboard42.herokuapp.com/
 
 And click on one exercice, and submit your solution.
 
-An example of submission format is in the the file: [example_submision.csv]
-
-
-#### Bonus
-
-Any neural network interpretability techniques used to understand neural network computation will be highly valued.
-If your solution is generic, and works across datasets, it will be valued by the jury prize.
-
+An example of submission format is in [this](example_submision.csv).
 
 ### Troubleshooting
 
@@ -210,14 +207,16 @@ If you see “ValueError: Cannot load file containing pickled data when allow_pi
 
 ## Acknowledgements
 
-We thank Ecole42 and the AI Club of Ecole42 for their collaboration in the organization of the hackathon.
-Manuel Bimich for the hackathon idea and the heavy administrative lifting.
-Joseph, and Quentin Didier for the preparation of the Hackathon.
-Emile and Mathilde, for their incredible cooking!
-Laszlo for the development of the leaderboard.
-Quentin Feuillat and the AI club of 42!
-Thanks to Alexandre, JS and all the other people who helped us to develop the subject.
-Diego and his brother, for providing a backup topic.
+- We thank Ecole42 and the AI Club of Ecole42 for their collaboration in the organization of the hackathon.
+- Quentin Didier for the preparation of the Hackathon.
+- Quentin Feuillat and the AI club of 42 for their formation!
+- Manuel Bimich for the hackathon idea and the heavy administrative lifting.
+- Symphonie, for their incredible cooking!
+- Laszlo for the development of the leaderboard.
+- Thanks to Alexandre, JS and all the other people who helped us to develop the subject.
+- Diego and his brother, for providing a backup subject.
+- The administration of Ecole42 who helped with the logistics.
+
 
 
 [1] Shah, Harshay, et al. "The pitfalls of simplicity bias in neural networks." Advances in Neural Information Processing Systems 33 (2020): 9573-9585.
