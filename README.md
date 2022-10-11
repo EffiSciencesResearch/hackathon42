@@ -188,6 +188,7 @@ Example request with [Requests](https://requests.readthedocs.io/en/latest/) in P
 
 ```python
 import requests
+import json
 
 res = requests.post("https://leaderboard42.herokuapp.com/reveal/", data={
         'username': 'my_awesome_team',
@@ -197,11 +198,13 @@ res = requests.post("https://leaderboard42.herokuapp.com/reveal/", data={
     })
 
 try:
-    res = eval(res.content)
+    res = json.loads(res.content)
     print(res)
 except:
     print("Error")
     print(res.content)
+
+# {'exercise_id': 0, 'datum_id': 4, 'label': 0, 'previously revealed': [12]}
 ```
 
 
@@ -211,7 +214,7 @@ Go to https://leaderboard42.herokuapp.com/
 
 And click on one exercice, and submit your solution.
 
-An example of submission format is in [this](example_submision.csv). The submission is a csv with no header and no index column. It's just the list of labels of the validation set.
+An example of submission format is in [this](example_submision.csv). The submission is a csv with no header and no index column. It's just the list of labels of the validation set. You must submit a .csv and not a .txt.
 
 ### Troubleshooting
 
