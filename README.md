@@ -56,6 +56,7 @@ There are two types of prizes: leaderboard maximization awards, and jury awards.
 The total score is the sum of the accuracy achieved in the target sets of each data set. If participants do not submit data, they have a default score of 80% for each dataset. So submitting a dataset is taking a risk. It is better to submit nothing than to submit something bad.
 
 It is possible for the same team to win both the first leaderboard prize and the first jury prize.
+We will review the code of the top teams of the leaderboards.
 
 ### Jury prize (first prize 600€ + second prize 300€)
 
@@ -74,6 +75,7 @@ Evaluation criteria:
 Any neural network interpretability techniques used to understand neural network computation will be highly valued.
 If your solution is generic, and works across datasets, it will be valued by the jury prize.
 
+Involvement and ideas proposed during the conferences and workshops will also be a criterion.
 
 ## The two phases of the hackathon
 
@@ -93,6 +95,7 @@ git lfs install
 git clone https://github.com/EffiSciencesResearch/hackathon42.git
 ```
 
+Note, a GPU with CUDA is not critical for this tutorial as a CPU will not take much time.
 
 ## Dataset details
 
@@ -228,6 +231,7 @@ If you see “ValueError: Cannot load file containing pickled data when allow_pi
 - Manuel Bimich for the hackathon idea and the heavy administrative lifting.
 - Symphonie, for their incredible cooking!
 - Laszlo for the development of the leaderboard.
+- Timothée Chauvin and Gautier Ducurtil for beta-testing the hackathon. 
 - Thanks to Alexandre, JS and all the other people who helped us to develop the subject.
 - Diego and his brother, for providing a backup subject.
 - The administration of Ecole42 who helped with the logistics.
