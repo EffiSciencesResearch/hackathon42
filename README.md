@@ -6,14 +6,14 @@ The EffiSciences x Ecole42 hackathon will focus on Beneficial Artificial Intelli
 
 ## The topic in a few words
 
-Some datasets are not well specified: let's take an example of a dataset that would contain images of camels in the desert, as well as images of cows in grasslands. The classifier must classify between images of camels and images of cows. But formulated as it is, the classifier could learn to classify the images not according to the animal, but according to the landscape: the dataset is underspecified because we have two features that are perfectly correlated (animal and landscape). In other words, the classifier can either decide to classify cow/camel or grassland/desert. And there is ambiguity when we try to classify an image of a camel in a grassland. The goal of this hackathon is to resolve these types of ambiguities.
+Some datasets are not well specified: let's take an example of a dataset that would contain images of camels in the desert, as well as images of cows in grasslands. The classifier must classify between images of camels and images of cows. But formulated as it is, the classifier could learn to classify the images not according to the animal, but according to the landscape: the dataset is underspecified because we have two features that are perfectly corelated (animal and landscape). In other words, the classifier can either decide to classify cow/camel or grassland/desert. And there is ambiguity when we try to classify an image of a camel in a grassland. The goal of this hackathon is to resolve these types of ambiguities.
 
 The hackathon consists of a series of datasets (Toy dataset, MNIST, embeddings, ...).
 
 Each dataset contains:
 - a labeled set: which contains images with two or more perfectly corelated features.
-- an unlabeled set: which contains a mixture of images with perfectly corelated features and images with uncorrelated features
-- a validation set: which must be labeled by the participants, and which contains a mixture of images with corelated features and images with uncorrelated assets.
+- an unlabeled set: which contains a mixture of images with perfectly corelated features and images with uncorelated features
+- a validation set: which must be labeled by the participants, and which contains a mixture of images with corelated features and images with uncorelated assets.
 
 You must use the unlabeled sets to notice the ambiguity.
 
@@ -37,7 +37,7 @@ Why did a classifier that was trained to identify collapsed lungs end up detecti
 
 ![alt text](assets/lungs.jpg "lungs with a drain")
 
-Because the training data was insufficient to distinguish actual collapsed lungs from chest drains – a treatment for collapsed lungs. Chest drains are visually far simpler than collapsed lungs and the two features were correlated, so the algorithm was able to perform well by learning to identify the simplest feature.
+Because the training data was insufficient to distinguish actual collapsed lungs from chest drains – a treatment for collapsed lungs. Chest drains are visually far simpler than collapsed lungs and the two features were corelated, so the algorithm was able to perform well by learning to identify the simplest feature.
 
 Classifiers will generally learn the simplest feature that predicts the label, whether it is what we humans had in mind, or not. Human oversight can sometimes catch this error, but human oversight is slow, expensive, and not fully reliable (as the humans may not even realise what the algorithm is actually doing before a potentially dangerous mistake is made).
 
@@ -50,13 +50,14 @@ This challenge is related to underspecification problems (D'Amour et al., 2020) 
 
 There are two types of prizes: leaderboard maximization awards, and jury awards.
 
-### Leaderboard Maximization prize
+
+### Leaderboard Maximization prize (first prize 700€ + second prize 400€)
 
 The total score is the sum of the accuracy achieved in the target sets of each data set. If participants do not submit data, they have a default score of 80% for each dataset. So submitting a dataset is taking a risk. It is better to submit nothing than to submit something bad.
 
-Participants must be able to explain their approach in order to win the award (Prologin style). But any strategy is allowed if it maximizes the ranking.
+It is possible for the same team to win both the first leaderboard prize and the first jury prize.
 
-### Jury prize
+### Jury prize (first prize 600€ + second prize 300€)
 
 For the jury prizes, participants will have to show their code to the jury and are free to ask the jury if they want to pitch a good idea. Even if they don't have a good score on the leaderboard, the jury will take these elements into consideration.
 
@@ -97,7 +98,7 @@ git clone https://github.com/EffiSciencesResearch/hackathon42.git
 
 ### INITIATION
 
-#### 0_toy_dataset (2pts)
+#### 0_toy_dataset (1pts)
 
 This dataset is a simple linear regression. This dataset corresponds to the simplest possible illustration of our problem. We have two features (x-axis and y-axis) which are corelated in the labeled set. The features are not corelated in the unlabeled set and in the target set (these two are in grey in the figure).
 
@@ -112,7 +113,7 @@ All other datasets are a variation of this dataset.
 ![alt text](assets/1_mnist_cc_labeled.png "1_mnist_cc_labeled.png")
 ![alt text](assets/1_mnist_cc_unlabeled.png "1_mnist_cc_unlabeled.png")
 
-In this dataset and in the following ones, the images are slightly noisy.
+In this dataset and in the following ones, we add a bit of noise to the images.
 
 #### 02_mnist_constant_image (1pt)
 
@@ -122,15 +123,17 @@ According to [1], the SB of SGD and its variants can be extreme: neural networks
 
 In this exercise, there are two features:
 - The left image is an image from MNIST
-- The image on the right is a constant image depending on the class, i.e. it is always the same 1 or the same 0.
+- The image on the right is a constant image (but still a bit noisy) depending on the class, i.e. it is always the same 1 or the same 0.
 
 It is much easier for the classifier to use the constant image on the right than the image on the left. However, in the target_set, only the left image will be predictive.
+
+02 means that there are zeros and twos in this dataset.
 
 ### RANDOM POSITION 
 
 #### 03_mnist_constant_image_random_row (2pts)
 
-In this section, we randomize the left and right images + we add the simplicity bias problem.
+Same thing as 02_mnist_constant_image, but we randomize the left and right images.
 
 #### 04_mnist_uniform_color_random_row (1pt)
 
@@ -208,7 +211,7 @@ Go to https://leaderboard42.herokuapp.com/
 
 And click on one exercice, and submit your solution.
 
-An example of submission format is in [this](example_submision.csv).
+An example of submission format is in [this](example_submision.csv). The submission is a csv with no header and no index column. It's just the list of labels of the validation set.
 
 ### Troubleshooting
 
