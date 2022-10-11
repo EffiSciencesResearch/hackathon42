@@ -86,7 +86,7 @@ In essence, we're just going to regenerate the datasets with another random seed
 
 ## Installation
 
-Please install git large file system begore cloning the git. The size of the repo is approximately 1Go.
+Please install git large file system before cloning the git. The size of the repo is approximately 1GB.
 
 ```
 git lfs install
@@ -157,12 +157,12 @@ Same as 06_mnist_sum but we sum 3 images.
 
 #### 08_mnist_sum_noise_level (1pts)
 
-We use the level of the gaussian noise as the simplicity biais.
+We use the level of the gaussian noise as the simplicity bias.
 
 
-### Mysterious datasets (5pts/mysterious dataset)
+### Mysterious datasets (3pts/mysterious dataset)
 
-In addition to the previous datasets, we add 3 datasets (12, 13, 14) that can be processed independently, and independently with the rest of the hackathon.
+In addition to the previous datasets, we add 3 datasets (12, 13, 14) that can be processed independently with the rest of the hackathon.
 
 These exercises are highly valued.
 
@@ -218,7 +218,7 @@ An example of submission format is [here](example_submision.csv). The submission
 
 ### Troubleshooting
 
-If you see “ValueError: Cannot load file containing pickled data when allow_pickle=False”, it's probably because you didn't installed git LFS.
+If you see “ValueError: Cannot load file containing pickled data when allow_pickle=False”, it's probably because you didn't install git LFS.
 
 ## Acknowledgements
 
