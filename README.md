@@ -98,7 +98,7 @@ git clone https://github.com/EffiSciencesResearch/hackathon42.git
 
 ### INITIATION
 
-#### 0_toy_dataset (1pts)
+#### 00_toy_dataset (1pts)
 
 This dataset is a simple linear regression. This dataset corresponds to the simplest possible illustration of our problem. We have two features (x-axis and y-axis) which are corelated in the labeled set. The features are not corelated in the unlabeled set and in the target set (these two are in grey in the figure).
 
@@ -164,7 +164,7 @@ We use the level of the gaussian noise as the simplicity biais.
 
 In addition to the previous datasets, we add 3 datasets (12, 13, 14) that can be processed independently, and independently with the rest of the hackathon.
 
-These exercises are highly valued and it is possible to win without finding a technique to solve the problems associated with datasets 0-8.
+These exercises are highly valued.
 
 ### How to get the 5 labels
 
@@ -214,7 +214,7 @@ Go to https://leaderboard42.herokuapp.com/
 
 And click on one exercice, and submit your solution.
 
-An example of submission format is in [this](example_submision.csv). The submission is a csv with no header and no index column. It's just the list of labels of the validation set. You must submit a .csv and not a .txt.
+An example of submission format is [here](example_submision.csv). The submission is a csv with no header and no index column. It's just the list of labels of the validation set. You must submit a .csv and not a .txt.
 
 ### Troubleshooting
 
