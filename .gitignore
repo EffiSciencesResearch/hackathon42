@@ -5,3 +5,4 @@ mnist-data.pcl*
 Create_datasets_42.ipynb
 **/14_mnist_cc_no/**
 test.py
+datasets2/**

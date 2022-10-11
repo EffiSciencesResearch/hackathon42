@@ -74,6 +74,16 @@ Evaluation criteria:
 Any neural network interpretability techniques used to understand neural network computation will be highly valued.
 If your solution is generic, and works across datasets, it will be valued by the jury prize.
 
+
+## The two phases of the hackathon
+
+From Friday evening to Sunday at 2pm, participants will work on mock datasets. On Sunday at 2pm:
+- the real datasets will be revealed and will be available on this GitHub.
+- all old submissions to the leaderboard will be deleted. Participants will start from scratch again.
+
+We are doing this procedure to encourage writing replicable code. 
+In essence, we're just going to regenerate the datasets with another random seed. There will be no new dataset types. Participants are thus encouraged to write the most automatic code possible.
+
 ## Installation
 
 Please install git large file system begore cloning the git. The size of the repo is approximately 1Go.
