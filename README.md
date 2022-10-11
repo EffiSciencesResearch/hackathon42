@@ -61,7 +61,6 @@ Participants must be able to explain their approach in order to win the award (P
 For the jury prizes, participants will have to show their code to the jury and are free to ask the jury if they want to pitch a good idea. Even if they don't have a good score on the leaderboard, the jury will take these elements into consideration.
 
 Evaluation criteria:
-- We make the people who are in the top 20 of the leaderboard
 - Interviews with the top 20 teams to understand their approaches
 - New methods will be strongly favored.
 - A beautiful ML method will be strongly preferred.
