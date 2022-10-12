@@ -230,9 +230,10 @@ If you see “ValueError: Cannot load file containing pickled data when allow_pi
 ## Acknowledgements
 
 - We thank Ecole42 and the AI Club of Ecole42 for their collaboration in the organization of the hackathon.
-- Quentin Didier for the preparation of the Hackathon.
-- Quentin Feuillat and the AI club of 42 for their formation!
 - Manuel Bimich for the hackathon idea and the heavy administrative lifting.
+- Quentin Didier for the preparation of the Hackathon.
+- Quentin Feuillat, Mathieu David and the AI club of 42 for their formation!
+- Esaïe Bauer and Joseph Barbier for the animation!
 - Symphonie, for their incredible cooking!
 - Laszlo for the development of the leaderboard.
 - Timothée Chauvin, Elias Schmidt and Gautier Ducurtil for beta-testing the hackathon. 
