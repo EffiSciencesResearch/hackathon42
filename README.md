@@ -238,6 +238,7 @@ If you see “ValueError: Cannot load file containing pickled data when allow_pi
 - Esaïe Bauer and Joseph Barbier for the animation!
 - Symphonie, for their incredible cooking!
 - Laszlo for the development of the leaderboard.
+- Lola Elisalde for the huge logistics management
 - Timothée Chauvin, Elias Schmidt and Gautier Ducurtil for beta-testing the hackathon. 
 - Thanks to Alexandre, JS and all the other people who helped us to develop the subject.
 - Diego and his brother, for providing a backup subject.
