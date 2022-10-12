@@ -168,6 +168,8 @@ We use the level of the gaussian noise as the simplicity bias.
 
 In addition to the other datasets, we add 2 datasets (12 and 13) that can be processed independently with the rest of the hackathon.
 
+You will only be able to submit and collect the 5 labels on dataset 12 only during the second phase of the hackathon.
+
 ### Embedding datasets (3pts each)
 
 Datasets (23 and 456) contain the embeddings of mnist digits. You won't be able to inspect those datasets ^^.
