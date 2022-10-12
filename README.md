@@ -131,6 +131,7 @@ In this exercise, there are two features:
 It is much easier for the classifier to use the constant image on the right than the image on the left. However, in the target_set, only the left image will be predictive.
 
 02 means that there are zeros and twos in this dataset.
+(The id of this dataset is 2)
 
 ### RANDOM POSITION 
 
@@ -163,11 +164,14 @@ Same as 06_mnist_sum but we sum 3 images.
 We use the level of the gaussian noise as the simplicity bias.
 
 
-### Mysterious datasets (3pts/mysterious dataset)
+### Mysterious datasets (3pts each)
 
-In addition to the previous datasets, we add 3 datasets (12, 13, 14) that can be processed independently with the rest of the hackathon.
+In addition to the other datasets, we add 2 datasets (12 and 13) that can be processed independently with the rest of the hackathon.
 
-These exercises are highly valued.
+### Embedding datasets (3pts each)
+
+Datasets (23 and 456) contain the embeddings of mnist digits. You won't be able to inspect those datasets ^^.
+(The id of those datasets are 23 and 456)
 
 ### How to get the 5 labels
 
@@ -231,7 +235,7 @@ If you see “ValueError: Cannot load file containing pickled data when allow_pi
 - Manuel Bimich for the hackathon idea and the heavy administrative lifting.
 - Symphonie, for their incredible cooking!
 - Laszlo for the development of the leaderboard.
-- Timothée Chauvin and Gautier Ducurtil for beta-testing the hackathon. 
+- Timothée Chauvin, Elias Schmidt and Gautier Ducurtil for beta-testing the hackathon. 
 - Thanks to Alexandre, JS and all the other people who helped us to develop the subject.
 - Diego and his brother, for providing a backup subject.
 - The administration of Ecole42 who helped with the logistics.
