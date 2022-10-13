@@ -7,3 +7,6 @@ Create_datasets_42.ipynb
 test.py
 datasets2/**
 contributing.md
+datasets/999_humans/humans/**
+datasets/mnist_embed_cdf/**
+datasets/999_humans/y_val.txt

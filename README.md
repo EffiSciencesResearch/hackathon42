@@ -175,6 +175,12 @@ You will only be able to submit and collect the 5 labels on dataset 12 only duri
 Datasets (23 and 456) contain the embeddings of mnist digits. You won't be able to inspect those datasets ^^.
 (The id of those datasets are 23 and 456)
 
+### Human datasets (5pts)
+
+This dataset (id=999) contains images of humans. You will have to start from a pre-trained neural network to improve your chances.
+This dataset is not in the same format as the two others for memory size reasons. You will need to unzip the dataset to start working.
+This dataset requires the use of a gpu (unlike the other datasets), for example google colab. You can save your colab gpu to use it on this dataset.
+
 ### How to get the 5 labels
 
 Revelation:
@@ -215,9 +221,12 @@ except:
 
 # {'exercise_id': 0, 'datum_id': 4, 'label': 0, 'previously revealed': [12]}
 ```
+Beware, the final score between the winners will probably be very close! Every label is precious!
 
 
 ### How to submit your solution
+
+In order to participate in the hackathon's leaderboard, a team must be validated by the organizers.
 
 Go to https://leaderboard42.herokuapp.com/
 
@@ -243,7 +252,6 @@ If you see “ValueError: Cannot load file containing pickled data when allow_pi
 - Thanks to Alexandre, JS and all the other people who helped us to develop the subject.
 - Diego and his brother, for providing a backup subject.
 - The administration of Ecole42 who helped with the logistics.
-
 
 
 [1] Shah, Harshay, et al. "The pitfalls of simplicity bias in neural networks." Advances in Neural Information Processing Systems 33 (2020): 9573-9585.
