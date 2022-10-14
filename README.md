@@ -1,3 +1,271 @@
+# Hackathon42
+ 
+Le Hackathon EffiSciences x Ecole42 sera axé sur l'intelligence artificielle bénéfique : le week-end du vendredi 14 au samedi 16 Octobre, nous proposerons des présentations, des ateliers et des formations sur la sécurité de l'IA.
+ 
+![alt text](assets/hackathon.png "Hackathon IA Safety")
+ 
+## Le Sujet en quelques mots : 
+ 
+Certains jeux de données ne sont pas bien spécifiés : prenons l'exemple d'un jeu de données qui contiendrait des images de chameaux dans le désert, ainsi que des images de vaches dans des prairies. Le classificateur doit classer les images de chameaux et les images de vaches. Mais tel qu'il est formulé, le classificateur pourrait apprendre à classer les images non pas en fonction de l'animal, mais en fonction du paysage : le jeu de données est sous-spécifié car nous avons deux caractéristiques qui sont parfaitement corrélées (l'animal et le paysage). En d'autres termes, le classificateur peut décider de classer soit vache/chameau, soit prairie/désert. Et il y a ambiguïté lorsque nous essayons de classifier l'image d'un chameau dans une prairie. L'objectif de ce hackathon est de résoudre ce type d'ambiguïtés.
+ 
+Le Hackathon consiste en une série de jeux de données (Toy dataset, MNIST, embeddings, ...).
+ 
+Chaque ensemble de données contient :
+- Un jeu de donné étiqueté : qui contient des images avec deux ou plus de deux caractéristiques parfaitement corrélées.
+- Un jeu de données non étiqueté : qui contient un mélange d'images avec des caractéristiques parfaitement corrélées et des images avec des caractéristiques non corrélées.
+- un jeu de données de validation : qui doit être étiqueté par les participant-es, et qui contient un mélange d'images avec des caractéristiques corrélées et des images avec des caractéristiques non corrélées.
+ 
+Vous devez utiliser les jeux de données non étiquetés pour révéler l'ambiguïté.
+ 
+Pour résoudre l'ambiguïté, les participant-es peuvent demander les étiquettes d'un maximum de 5 images des ensembles cibles, en choisissant judicieusement les images les plus pertinentes pour résoudre l'ambiguïté.
+Les participant-es ont accès à une API, et ils peuvent interroger l'API pour obtenir les étiquettes des images, en posant la question image par image.
+Il n'y a pas de pénalité pour avoir demandé 5 étiquettes au lieu d'une.
+ 
+!! Attention !! Les participant-es ne peuvent faire qu'une seule soumission par ensemble de données !
+ 
+Le leaderboard du Hackathon est accessible ici : https://leaderboard42.herokuapp.com/
+ 
+## Motivations
+ 
+### Pour qu'une seule soumission ?
+ 
+En effet, l'un des objectifs de ce hackathon est de faire prendre conscience aux participant-es la difficulté de mettre en production un système d'intelligence artificielle avancé. 
+Une fois que le système est déployé, il est très difficile de revenir en arrière. De plus, nous aimerions que les futures intelligences artificielles ou modèles de langage avancés prennent le temps de poser des questions en cas de doute, prennent le temps de remarquer les ambiguïtés et n'agissent qu'après s'être parfaitement assurés de ce qu'on leur demande. La possibilité de demander 5 étiquettes simule cette situation de manière simple.
+ 
+### Pourquoi trouve-t-on ce sujet intéressant ? 
+ 
+Pourquoi un classificateur entraîné à identifier des poumons affaissés a-t-il fini par détecter des drains thoraciques ?
+
+![alt text](assets/lungs.jpg "Poumon avec un drain")
+ 
+En effet, les données d'apprentissage ne permettaient pas de distinguer les véritables poumons affaissés des drains thoraciques - un traitement pour les poumons affaissés. Les drains thoraciques sont visuellement beaucoup plus simples que les poumons affaissés et les deux caractéristiques étaient corrélées, de sorte que l'algorithme a pu obtenir de bons résultats en apprenant à identifier la caractéristique la plus simple.
+ 
+Les classificateurs apprennent généralement la caractéristique la plus simple qui permet de prédire l'étiquette, qu'elle corresponde ou non à ce que les humains avaient en tête. La surveillance humaine peut parfois détecter cette erreur, mais elle est lente, coûteuse et n'est pas totalement fiable (car l'homme peut ne pas se rendre compte de ce que fait l'algorithme avant qu'une erreur potentiellement dangereuse ne soit commise).
+ 
+La détection de la "mauvaise" caractéristique signifie que le classificateur ne parviendra pas à généraliser comme prévu - lorsqu'il est déployé sur des radiographies de vrais humains avec de vrais poumons affaissés, non traités, il les classera comme sains, puisqu'ils n'ont pas de drain thoracique.
+ 
+This challenge is related to underspecification problems (D'Amour et al., 2020) in which several hypotheses can explain the data. As well as the problem of robustness to distributional changes (Amodei et al., 2016). For example, classifiers trained to recognize the lungs of hospitalized patients with and without pneumothorax cannot be used preemptively on untreated patients because the classifier will recognize the chest drain (an easily identifiable straight line) and not the causative features of the disease (Oakden-Rayner et al., 2020). This problem is quite general and is likely to arise as soon as an ML algorithm is to be used on data different from the training data (selection bias: labeled data are generally simpler than unlabeled data and simpler than the data encountered in production). For example, in the area of sustainable development, most ML models are trained on a sample of rich countries very different from the countries where the model will be deployed. In general, we want to use past data to predict the future, but the future is not the past.
+ 
+ 
+## Rules of the game
+ 
+There are two types of prizes: leaderboard maximization awards, and jury awards.
+ 
+ 
+### Leaderboard Maximization prize (first prize €700 + second prize €400)
+ 
+The total score is the sum of the accuracy achieved in the target sets of each data set. If participants do not submit data, they have a default score of 80% for each dataset. So submitting a dataset is taking a risk. It is better to submit nothing than to submit something bad.
+ 
+It is possible for the same team to win both the first leaderboard prize and the first jury prize.
+We will review the code of the top teams of the leaderboards.
+ 
+### Jury prize (first prize €600 + second prize €300)
+ 
+For the jury prizes, participants will have to show their code to the jury and are free to ask the jury if they want to pitch a good idea. Even if they don't have a good score on the leaderboard, the jury will take these elements into consideration.
+ 
+Evaluation criteria:
+- Interviews with the top 20 teams to understand their approaches
+- New methods will be strongly favored.
+- A beautiful ML method will be strongly preferred.
+- Creative approaches that do not have good results will be valued
+- We will check the code:
+   - The training of a dataset must not use the other datasets
+   - Do not use a pretrained model
+   - It is allowed to look at the target set, but not allowed to classify by hand.
+ 
+Any neural network interpretability techniques used to understand neural network computation will be highly valued.
+If your solution is generic, and works across datasets, it will be valued by the jury prize.
+ 
+Involvement and ideas proposed during the conferences and workshops will also be a criterion.
+ 
+## The two phases of the hackathon
+ 
+From Friday evening to Sunday at 2pm, participants will work on mock datasets. On Sunday at 2pm:
+- the real datasets will be revealed and will be available on this GitHub.
+- all old submissions to the leaderboard will be deleted. Participants will start from scratch again.
+ 
+We are doing this procedure to encourage writing replicable code.
+In essence, we're just going to regenerate the datasets with another random seed. There will be no new dataset types. Participants are thus encouraged to write the most automatic code possible.
+ 
+## Installation
+ 
+Please install git large file system before cloning the git. The size of the repo is approximately 1GB.
+ 
+```
+git lfs install
+git clone https://github.com/EffiSciencesResearch/hackathon42.git
+```
+ 
+Note, a GPU with CUDA is not critical for this tutorial, as a CPU will not take much time.
+ 
+## Dataset details
+ 
+### INITIATION
+ 
+#### 00_toy_dataset (1pts)
+ 
+This dataset is a simple linear regression. This dataset corresponds to the simplest possible illustration of our problem. We have two features (x-axis and y-axis) which are correlated in the labeled set. The features are not correlated in the unlabeled set and in the target set (these two are in grey in the figure).
+ 
+![alt text](assets/Toy_dataset.png "Toy Dataset")
+ 
+#### 01_mnist_cc (1pt)
+ 
+We use the mnist dataset to simulate misspecified datasets.
+We now have two features: left and right.
+All other datasets are a variation of this dataset.
+ 
+![alt text](assets/1_mnist_cc_labeled.png "1_mnist_cc_labeled.png")
+![alt text](assets/1_mnist_cc_unlabeled.png "1_mnist_cc_unlabeled.png")
+ 
+In this dataset and in the following ones, we add a bit of noise to the images.
+ 
+#### 02_mnist_constant_image (1pt)
+ 
+In this task, we introduce the concept of Simplicity bias.  Simplicity Bias (SB) -- the tendency of standard training procedures such as stochastic gradient descent (SGD) to find simple models.
+ 
+According to [1], the SB of SGD and its variants can be extreme: neural networks can rely exclusively on the simplest feature and remain invariant to all complex predictive features.
+ 
+In this exercise, there are two features:
+- The left image is an image from MNIST
+- The image on the right is a constant image (but still a bit noisy) depending on the class, i.e. it is always the same 1 or the same 0.
+ 
+It is much easier for the classifier to use the constant image on the right than the image on the left. However, in the target_set, only the left image will be predictive.
+ 
+02 means that there are zeros and twos in this dataset.
+(The id of this dataset is 2)
+ 
+### RANDOM POSITION
+ 
+#### 03_mnist_constant_image_random_row (2pts)
+ 
+Same thing as 02_mnist_constant_image, but we randomize the left and right images.
+ 
+#### 04_mnist_uniform_color_random_row (1pt)
+ 
+In this task, we exacerbate the simplicity bias by using an image that is a constant color depending on the label.
+ 
+#### 05_mnist_uniform_color_low_mix_rate (2pts)
+ 
+Some approaches work well when the unlabeled dataset is balanced across all image categories - but we cannot assume this to be true for arbitrary unlabeled datasets in nature. Unbalanced datasets can, of course, be rebalanced - however, this is akin to manual labeling and, as such, is prohibitively expensive and difficult to scale.
+ 
+Thus, in this exercise, we seek a method that works even with a low mixing rate. The mixing ratio is a real number between 0 and 1 that indicates the proportion of cross types (0/1 and 1/0) in the unlabeled data set. A mixture rate of 0 has only 0/0 and 1/1 (as in the labeled data set), a mixture rate of 0.5 has equal amounts in each category, while a mixture rate of 1 has only 0/1 and 1/0 cross types.
+ 
+### SUM
+ 
+#### 06_mnist_sum (1pts)
+ 
+Same as 01_mnist_cc but we sum the left and right images.
+ 
+#### 07_mnist_sum_bis (1pts)
+ 
+Same as 06_mnist_sum but we sum 3 images.
+ 
+#### 08_mnist_sum_noise_level (1pts)
+ 
+We use the level of the gaussian noise as the simplicity bias.
+ 
+ 
+### Mysterious datasets (3pts each)
+ 
+In addition to the other datasets, we add 2 datasets (12 and 13) that can be processed independently with the rest of the hackathon.
+ 
+You will only be able to submit and collect the 5 labels on dataset 12 only during the second phase of the hackathon.
+ 
+### Embedding datasets (3pts each)
+ 
+Datasets (23 and 456) contain the embeddings of mnist digits. You won't be able to inspect those datasets ^^.
+(The id of those datasets are 23 and 456)
+ 
+### Human datasets (5pts)
+ 
+This dataset (id=999) contains images of humans. You will have to start from a pre-trained neural network to improve your chances.
+This dataset is not in the same format as the two others for memory size reasons. You will need to unzip the dataset to start working.
+This dataset requires the use of a gpu (unlike the other datasets), for example google colab. You can save your colab gpu to use it on this dataset.
+ 
+### How to get the 5 labels
+ 
+Revelation:
+ 
+POST https://leaderboard42.herokuapp.com/reveal/
+ 
+with the following form data:
+- `username`: `awesome_team`
+- `password`: `secret_password`
+- `exercise_id`: 3
+- `datum_id`: 456
+ 
+Example request with cURL:
+ 
+```bash
+$ curl -F username=awesome_team -F password=secret_password -F exercise_id=3 -F datum_id=456 https://leaderboard42.herokuapp.com/reveal/
+```
+ 
+Example request with [Requests](https://requests.readthedocs.io/en/latest/) in Python:
+ 
+```python
+import requests
+import json
+ 
+res = requests.post("https://leaderboard42.herokuapp.com/reveal/", data={
+       'username': 'my_awesome_team',
+       'password': "my_password",
+       'exercise_id': 0,
+       'datum_id': 4
+   })
+ 
+try:
+   res = json.loads(res.content)
+   print(res)
+except:
+   print("Error")
+   print(res.content)
+ 
+# {'exercise_id': 0, 'datum_id': 4, 'label': 0, 'previously revealed': [12]}
+```
+Beware, the final score between the winners will probably be very close! Every label is precious!
+ 
+ 
+### How to submit your solution
+ 
+In order to participate in the hackathon's leaderboard, a team must be validated by the organizers.
+ 
+Go to https://leaderboard42.herokuapp.com/
+ 
+And click on one exercice, and submit your solution.
+ 
+An example of submission format is [here](example_submision.csv). The submission is a csv with no header and no index column. It's just the list of labels of the validation set. You must submit a .csv and not a .txt.
+ 
+### Troubleshooting
+ 
+If you see “ValueError: Cannot load file containing pickled data when allow_pickle=False”, it's probably because you didn't install git LFS.
+ 
+## Acknowledgements
+ 
+- We thank Ecole42 and the AI Club of Ecole42 for their collaboration in the organization of the hackathon.
+- Manuel Bimich for the hackathon idea and the heavy administrative lifting.
+- Quentin Didier for the preparation of the Hackathon.
+- Quentin Feuillat, Mathieu David and the AI club of 42 for their formation!
+- Esaïe Bauer and Joseph Barbier for the animation!
+- Symphonie, for their incredible cooking!
+- Laszlo for the development of the leaderboard.
+- Lola Elisalde for the huge logistics management
+- Timothée Chauvin, Elias Schmidt and Gautier Ducurtil for beta-testing the hackathon.
+- Thanks to Alexandre, JS and all the other people who helped us to develop the subject.
+- Diego and his brother, for providing a backup subject.
+- The administration of Ecole42 who helped with the logistics.
+ 
+ 
+[1] Shah, Harshay, et al. "The pitfalls of simplicity bias in neural networks." Advances in Neural Information Processing Systems 33 (2020): 9573-9585.
+ 
+
+
+
+
+
+
+
+
+===== ENGLISH VERSION ======
 # hackathon42
  
 The EffiSciences x Ecole42 hackathon will focus on Beneficial Artificial Intelligence : The weekend of Friday, October 14-16 will host presentations, workshops and training in AI Safety.
