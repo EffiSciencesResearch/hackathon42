@@ -1,6 +1,6 @@
 # Hackathon42
  
-Le Hackathon EffiSciences x Ecole42 sera axé sur l'intelligence artificielle bénéfique : le week-end du vendredi 14 au samedi 16 Octobre, nous proposerons des présentations, des ateliers et des formations sur la sécurité de l'IA.
+Le Hackathon EffiSciences x Ecole42, en partenariat avec 42AI, sera axé sur l'intelligence artificielle bénéfique : le week-end du vendredi 14 au samedi 16 Octobre, nous proposerons des présentations, des ateliers et des formations sur la sécurité de l'IA.
  
 ![alt text](assets/hackathon.png "Hackathon IA Safety")
  
@@ -27,14 +27,14 @@ Le leaderboard du Hackathon est accessible ici : https://leaderboard42.herokuapp
  
 ## Motivations
  
-### Pour qu'une seule soumission ?
+### Pourquoi qu'une seule soumission ?
  
 En effet, l'un des objectifs de ce hackathon est de faire prendre conscience aux participant-es la difficulté de mettre en production un système d'intelligence artificielle avancé. 
 Une fois que le système est déployé, il est très difficile de revenir en arrière. De plus, nous aimerions que les futures intelligences artificielles ou modèles de langage avancés prennent le temps de poser des questions en cas de doute, prennent le temps de remarquer les ambiguïtés et n'agissent qu'après s'être parfaitement assurés de ce qu'on leur demande. La possibilité de demander 5 étiquettes simule cette situation de manière simple.
  
 ### Pourquoi trouve-t-on ce sujet intéressant ? 
  
-Pourquoi un classificateur entraîné à identifier des poumons affaissés a-t-il fini par détecter des drains thoraciques ?
+Pourquoi un classificateur entraîné à identifier des poumons affaissés a-t-il fini par détecter des drains thoraciques (les cables) ?
 
 ![alt text](assets/lungs.jpg "Poumon avec un drain")
  
@@ -44,48 +44,51 @@ Les classificateurs apprennent généralement la caractéristique la plus simple
  
 La détection de la "mauvaise" caractéristique signifie que le classificateur ne parviendra pas à généraliser comme prévu - lorsqu'il est déployé sur des radiographies de vrais humains avec de vrais poumons affaissés, non traités, il les classera comme sains, puisqu'ils n'ont pas de drain thoracique.
  
-This challenge is related to underspecification problems (D'Amour et al., 2020) in which several hypotheses can explain the data. As well as the problem of robustness to distributional changes (Amodei et al., 2016). For example, classifiers trained to recognize the lungs of hospitalized patients with and without pneumothorax cannot be used preemptively on untreated patients because the classifier will recognize the chest drain (an easily identifiable straight line) and not the causative features of the disease (Oakden-Rayner et al., 2020). This problem is quite general and is likely to arise as soon as an ML algorithm is to be used on data different from the training data (selection bias: labeled data are generally simpler than unlabeled data and simpler than the data encountered in production). For example, in the area of sustainable development, most ML models are trained on a sample of rich countries very different from the countries where the model will be deployed. In general, we want to use past data to predict the future, but the future is not the past.
+Ce défi est lié aux problèmes de sous-spécification (D'Amour et al., 2020) dans lesquels plusieurs hypothèses peuvent expliquer les données. Ainsi qu'au problème de robustesse aux changements de distribution (Amodei et al., 2016). Par exemple, des classificateurs entraînés à reconnaître les poumons de patients hospitalisés avec et sans pneumothorax ne peuvent pas être utilisés de manière préventive sur des patients non traités car le classificateur reconnaîtra le drain thoracique (une ligne droite facilement identifiable) et non les caractéristiques causales de la maladie (Oakden-Rayner et al., 2020). Ce problème est assez général et est susceptible de se poser dès qu'un algorithme ML doit être utilisé sur des données différentes des données d'entraînement (biais de sélection : les données étiquetées sont généralement plus simples que les données non étiquetées et plus simples que les données rencontrées en production). Par exemple, dans le domaine du développement durable, la plupart des modèles ML sont entraînés sur un échantillon de pays riches très différents des pays où le modèle sera déployé. En général, nous voulons utiliser les données du passé pour prédire l'avenir, mais l'avenir n'est pas le passé.
  
  
-## Rules of the game
+## Règles du jeu
  
-There are two types of prizes: leaderboard maximization awards, and jury awards.
+Il y a deux types de prix : Score au leaderboard et prix du Jury. 
+
+Vous devrez rassembler toutes vos explication pour chaque problème dans un google form qu'on vous fournira. Vous devrez soumettre votre code zippé et vos explication pour chaque probleme dans ce google form.
  
+### Prix de Score au Leaderboard (premier prix 700 € + deuxième prix 400 €)
  
-### Leaderboard Maximization prize (first prize €700 + second prize €400)
+Le score total est la somme de la précision obtenue dans les target set de chaque jeu de données. Si les participant-es ne soumettent pas de données, ils ont un score par défaut de 80 % pour chaque jeu de données. Soumettre un ensemble de données, c'est donc prendre un risque. Il est préférable de ne rien soumettre que de soumettre quelque chose de mauvais.
  
-The total score is the sum of the accuracy achieved in the target sets of each data set. If participants do not submit data, they have a default score of 80% for each dataset. So submitting a dataset is taking a risk. It is better to submit nothing than to submit something bad.
+Il est possible pour une même équipe de gagner à la fois le premier prix du classement et le premier prix du jury.
+Nous examinerons le code des meilleures équipes du classement.
  
-It is possible for the same team to win both the first leaderboard prize and the first jury prize.
-We will review the code of the top teams of the leaderboards.
+### Prix du jury (premier prix 600 € + deuxième prix 300 €)
  
-### Jury prize (first prize €600 + second prize €300)
+Pour les prix du jury, les participant-es devront montrer leur code au jury et sont libres de demander au jury s'ils veulent présenter une bonne idée, même si leur idée ne réalise pas un bon score au classement, le jury prendra ces éléments en considération.
  
-For the jury prizes, participants will have to show their code to the jury and are free to ask the jury if they want to pitch a good idea. Even if they don't have a good score on the leaderboard, the jury will take these elements into consideration.
+Critères d'évaluation :
+- Entretiens avec les 20 meilleures équipes pour comprendre leurs approches.
+- Les nouvelles méthodes seront fortement favorisées.
+- Une belle méthode sera fortement privilégiée.
+- Les approches créatives qui n'ont pas de bons résultats seront appréciées.
+- Nous vérifierons le code :
+   - L'entraînement d'un jeu de données ne doit pas utiliser les autres jeux de données.
+   - Ne pas utiliser un modèle pré-entraîné.
+   - Il est permis de regarder le target set, mais pas de classifier à la main.
  
-Evaluation criteria:
-- Interviews with the top 20 teams to understand their approaches
-- New methods will be strongly favored.
-- A beautiful ML method will be strongly preferred.
-- Creative approaches that do not have good results will be valued
-- We will check the code:
-   - The training of a dataset must not use the other datasets
-   - Do not use a pretrained model
-   - It is allowed to look at the target set, but not allowed to classify by hand.
+Toute technique d'interprétabilité des réseaux neuronaux utilisée pour comprendre le calcul des réseaux neuronaux sera fortement valorisée.
+Si votre solution est généralisable, et fonctionne sur plusieurs ensembles de données, elle sera valorisée par le prix du jury.
  
-Any neural network interpretability techniques used to understand neural network computation will be highly valued.
-If your solution is generic, and works across datasets, it will be valued by the jury prize.
+L'implication générale dans le hackathon et la volonté d'aider les autres participant-es sera prise en compte.
  
-Involvement and ideas proposed during the conferences and workshops will also be a criterion.
+## Les deux phases du Hackathon
  
-## The two phases of the hackathon
+Du vendredi soir au dimanche à 14h, les participants travailleront sur des jeux de données fictifs.
+Et le dimanche à 14h :
+- les vrais jeux de données seront révélés et seront disponibles sur ce GitHub.
+- Toutes les anciennes soumissions au classement seront supprimées. Les participants repartiront de zéro.
+La permière phase sert donc à vous approprier le sujet et peaufinner vos stratégies et modèles, pour pouvoir les déployer en phase 2.
  
-From Friday evening to Sunday at 2pm, participants will work on mock datasets. On Sunday at 2pm:
-- the real datasets will be revealed and will be available on this GitHub.
-- all old submissions to the leaderboard will be deleted. Participants will start from scratch again.
- 
-We are doing this procedure to encourage writing replicable code.
-In essence, we're just going to regenerate the datasets with another random seed. There will be no new dataset types. Participants are thus encouraged to write the most automatic code possible.
+Nous procédons ainsi pour encourager l'écriture de code reproductible et généralisable, et décourager une solution de fortune adaptée à un jeu de données spécifique.
+En substance, nous allons simplement régénérer les ensembles de données avec une autre graine aléatoire. Il n'y aura pas de nouveaux types de jeux de données. Les participants sont donc encouragés à écrire le code le plus automatique possible.
  
 ## Installation
  
@@ -105,8 +108,6 @@ Note, a GPU with CUDA is not critical for this tutorial, as a CPU will not take 
 #### 00_toy_dataset (1pts)
  
 This dataset is a simple linear regression. This dataset corresponds to the simplest possible illustration of our problem. We have two features (x-axis and y-axis) which are correlated in the labeled set. The features are not correlated in the unlabeled set and in the target set (these two are in grey in the figure).
- 
-![alt text](assets/Toy_dataset.png "Toy Dataset")
  
 #### 01_mnist_cc (1pt)
  
