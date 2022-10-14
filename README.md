@@ -92,100 +92,102 @@ En substance, nous allons simplement régénérer les ensembles de données avec
  
 ## Installation
  
-Please install git large file system before cloning the git. The size of the repo is approximately 1GB.
+Veuillez installer git large file system avant de cloner le git. La taille du repo est d'environ 1GB.
  
 ```
 git lfs install
 git clone https://github.com/EffiSciencesResearch/hackathon42.git
 ```
  
-Note, a GPU with CUDA is not critical for this tutorial, as a CPU will not take much time.
+Notez qu'un GPU avec CUDA n'est pas indispensable pour ce tutoriel, un simple CPU fonctionnera très bien.
  
-## Dataset details
+## Détails des jeux de données.
  
 ### INITIATION
  
 #### 00_toy_dataset (1pts)
  
-This dataset is a simple linear regression. This dataset corresponds to the simplest possible illustration of our problem. We have two features (x-axis and y-axis) which are correlated in the labeled set. The features are not correlated in the unlabeled set and in the target set (these two are in grey in the figure).
+Cet ensemble de données est une régression linéaire simple. Ce jeu de données correspond à l'illustration la plus simple possible de notre problème. Nous avons deux caractéristiques (axe des x et axe des y) qui sont corrélées dans l'ensemble étiqueté. Les caractéristiques ne sont pas corrélées dans l'ensemble non étiqueté et dans le target set (ces deux éléments sont en gris sur la figure).
  
 #### 01_mnist_cc (1pt)
  
-We use the mnist dataset to simulate misspecified datasets.
-We now have two features: left and right.
-All other datasets are a variation of this dataset.
+Nous utilisons l'ensemble de données mnist pour simuler des ensembles de données mal spécifiés.
+Nous avons maintenant deux caractéristiques : gauche et droite.
+Tous les autres jeux de données sont une variation de ce jeu de données.
  
 ![alt text](assets/1_mnist_cc_labeled.png "1_mnist_cc_labeled.png")
 ![alt text](assets/1_mnist_cc_unlabeled.png "1_mnist_cc_unlabeled.png")
  
-In this dataset and in the following ones, we add a bit of noise to the images.
+Dans ce jeu de données et dans les suivants, nous ajoutons un peu de bruit aux images.
  
 #### 02_mnist_constant_image (1pt)
  
-In this task, we introduce the concept of Simplicity bias.  Simplicity Bias (SB) -- the tendency of standard training procedures such as stochastic gradient descent (SGD) to find simple models.
+Dans cette tâche, nous introduisons le concept de biais de simplicité.  Le biais de simplicité (SB) est la tendance des procédures d'entrainement standardes telles que la descente de gradient stochastique (SGD) à trouver des modèles simples.
  
-According to [1], the SB of SGD and its variants can be extreme: neural networks can rely exclusively on the simplest feature and remain invariant to all complex predictive features.
+Selon [1], le SB de la SGD et de ses variantes peut être extrême : les réseaux neuronaux peuvent s'appuyer exclusivement sur la caractéristique la plus simple et rester invariants à toutes les caractéristiques prédictives complexes.
  
-In this exercise, there are two features:
-- The left image is an image from MNIST
-- The image on the right is a constant image (but still a bit noisy) depending on the class, i.e. it is always the same 1 or the same 0.
+Dans cet exercice, il y a deux caractéristiques :
+- L'image de gauche est une image provenant de MNIST.
+- L'image de droite est une image constante (mais toujours un peu bruyante) en fonction de la classe, c'est-à-dire qu'elle est toujours le même 1 ou le même 0.
  
-It is much easier for the classifier to use the constant image on the right than the image on the left. However, in the target_set, only the left image will be predictive.
+Il est beaucoup plus facile pour le classificateur d'utiliser l'image constante de droite que l'image de gauche. Cependant, dans le target_set, seule l'image de gauche sera prédictive.
  
-02 means that there are zeros and twos in this dataset.
-(The id of this dataset is 2)
+02 signifie qu'il y a des zéros et des deux dans cet ensemble de données.
+(L'id de cet ensemble de données est 2)
  
 ### RANDOM POSITION
  
 #### 03_mnist_constant_image_random_row (2pts)
  
-Same thing as 02_mnist_constant_image, but we randomize the left and right images.
+Même chose que 02_mnist_constant_image, mais on randomise les images de gauche et de droite.
  
 #### 04_mnist_uniform_color_random_row (1pt)
  
-In this task, we exacerbate the simplicity bias by using an image that is a constant color depending on the label.
+Dans cette tâche, nous exacerbons le biais de simplicité en utilisant une image dont la couleur est constante en fonction de l'étiquette.
  
 #### 05_mnist_uniform_color_low_mix_rate (2pts)
  
-Some approaches work well when the unlabeled dataset is balanced across all image categories - but we cannot assume this to be true for arbitrary unlabeled datasets in nature. Unbalanced datasets can, of course, be rebalanced - however, this is akin to manual labeling and, as such, is prohibitively expensive and difficult to scale.
+Certaines approches fonctionnent bien lorsque l'ensemble de données non étiquetées est équilibré entre toutes les catégories d'images - mais nous ne pouvons pas supposer que cela soit vrai pour les ensembles de données non étiquetées arbitraires dans la nature. Les ensembles de données non équilibrés peuvent, bien sûr, être rééquilibrés - cependant, cela s'apparente à un étiquetage manuel et, en tant que tel, est prohibitif et difficile à mettre à l'échelle.
  
-Thus, in this exercise, we seek a method that works even with a low mixing rate. The mixing ratio is a real number between 0 and 1 that indicates the proportion of cross types (0/1 and 1/0) in the unlabeled data set. A mixture rate of 0 has only 0/0 and 1/1 (as in the labeled data set), a mixture rate of 0.5 has equal amounts in each category, while a mixture rate of 1 has only 0/1 and 1/0 cross types.
+Ainsi, dans cet exercice, nous cherchons une méthode qui fonctionne même avec un faible taux de mélange. Le taux de mélange est un nombre réel entre 0 et 1 qui indique la proportion de types de croisement (0/1 et 1/0) dans l'ensemble de données non étiquetées. Un taux de mélange de 0 ne comporte que 0/0 et 1/1 (comme dans l'ensemble de données étiquetées), un taux de mélange de 0,5 comporte des quantités égales dans chaque catégorie, tandis qu'un taux de mélange de 1 ne comporte que 0/1 et 1/0 types de croisement.
  
 ### SUM
  
 #### 06_mnist_sum (1pts)
- 
-Same as 01_mnist_cc but we sum the left and right images.
+
+Identique à 01_mnist_cc mais on additionne les images de gauche et de droite.
  
 #### 07_mnist_sum_bis (1pts)
  
-Same as 06_mnist_sum but we sum 3 images.
+Identique à 06_mnist_sum mais nous additionnons 3 images.
  
 #### 08_mnist_sum_noise_level (1pts)
  
-We use the level of the gaussian noise as the simplicity bias.
+Nous utilisons le niveau du bruit gaussien comme biais de simplicité.
  
  
 ### Mysterious datasets (3pts each)
  
-In addition to the other datasets, we add 2 datasets (12 and 13) that can be processed independently with the rest of the hackathon.
+En plus des autres jeux de données, nous ajoutons 2 jeux de données (12 et 13) qui peuvent être traités indépendamment du reste du hackathon.
  
-You will only be able to submit and collect the 5 labels on dataset 12 only during the second phase of the hackathon.
+Vous ne pourrez soumettre et collecter les 5 étiquettes sur le dataset 12 que pendant la deuxième phase du hackathon.
  
 ### Embedding datasets (3pts each)
  
-Datasets (23 and 456) contain the embeddings of mnist digits. You won't be able to inspect those datasets ^^.
-(The id of those datasets are 23 and 456)
+Les jeux de données (23 et 456) contiennent les embeddings des chiffres mnists. Vous ne serez pas en mesure d'inspecter ces jeux de données ^^.
+(Les identifiants de ces jeux de données sont 23 et 456)
  
 ### Human datasets (5pts)
  
-This dataset (id=999) contains images of humans. You will have to start from a pre-trained neural network to improve your chances.
-This dataset is not in the same format as the two others for memory size reasons. You will need to unzip the dataset to start working.
-This dataset requires the use of a gpu (unlike the other datasets), for example google colab. You can save your colab gpu to use it on this dataset.
+Ce jeu de données (id=999) contient des images d'humains. Vous devrez partir d'un réseau neuronal pré-entraîné pour améliorer vos chances.
+Ce jeu de données n'est pas dans le même format que les deux autres pour des raisons de taille mémoire. Vous devrez dézipper le jeu de données pour commencer à travailler.
+Ce jeu de données nécessite l'utilisation d'un gpu (contrairement aux autres jeux de données), par exemple via google colab. Vous pouvez sauvegarder votre gpu colab pour l'utiliser sur ce jeu de données.
+
+Un dataset qui ressemble beaucoup beacuoup à human dataset sera rajouté à 15h dimanche.
  
-### How to get the 5 labels
+### Comment obtenir les 5 étiquettes
  
-Revelation:
+Comment accéder à l'API :
  
 POST https://leaderboard42.herokuapp.com/reveal/
  
@@ -223,45 +225,40 @@ except:
  
 # {'exercise_id': 0, 'datum_id': 4, 'label': 0, 'previously revealed': [12]}
 ```
-Beware, the final score between the winners will probably be very close! Every label is precious!
+Attention, le score final entre les gagnants sera probablement très serré ! Chaque étiquette est précieuse !
  
  
-### How to submit your solution
+### Comment soumettre votre solution
+
+Pour pouvoir participer au classement du hackathon, une équipe doit être validée par les organisateurs.
  
-In order to participate in the hackathon's leaderboard, a team must be validated by the organizers.
+Allez sur https://leaderboard42.herokuapp.com/
  
-Go to https://leaderboard42.herokuapp.com/
+Et cliquez sur un exercice, et soumettez votre solution.
  
-And click on one exercice, and submit your solution.
+Un exemple de format de soumission est [here](exemple_submision.csv). La soumission est un csv sans en-tête et sans colonne d'index. Il s'agit simplement de la liste des étiquettes de l'ensemble de validation. Vous devez soumettre un .csv et non un .txt.
  
-An example of submission format is [here](example_submision.csv). The submission is a csv with no header and no index column. It's just the list of labels of the validation set. You must submit a .csv and not a .txt.
+### Résolution de problèmes
  
-### Troubleshooting
+Si vous voyez "ValueError : Cannot load file containing pickled data when allow_pickle=False", c'est probablement parce que vous n'avez pas installé git LFS.
  
-If you see “ValueError: Cannot load file containing pickled data when allow_pickle=False”, it's probably because you didn't install git LFS.
+## Remerciements
  
-## Acknowledgements
- 
-- We thank Ecole42 and the AI Club of Ecole42 for their collaboration in the organization of the hackathon.
-- Manuel Bimich for the hackathon idea and the heavy administrative lifting.
-- Quentin Didier for the preparation of the Hackathon.
-- Quentin Feuillat, Mathieu David and the AI club of 42 for their formation!
-- Esaïe Bauer and Joseph Barbier for the animation!
-- Symphonie, for their incredible cooking!
-- Laszlo for the development of the leaderboard.
-- Lola Elisalde for the huge logistics management
-- Timothée Chauvin, Elias Schmidt and Gautier Ducurtil for beta-testing the hackathon.
-- Thanks to Alexandre, JS and all the other people who helped us to develop the subject.
-- Diego and his brother, for providing a backup subject.
-- The administration of Ecole42 who helped with the logistics.
- 
+- Nous remercions l'Ecole42 et le Club AI de l'Ecole42 pour leur collaboration à l'organisation du hackathon.
+- Manuel Bimich pour l'idée du hackathon et les lourdes tâches administratives.
+- Quentin Didier et Charbel Cegerie pour la préparation et l'organisation du Hackathon.
+- Quentin Feuillat, Mathieu David et le club AI de 42 pour leur formation !
+- Esaïe Bauer et Joseph Barbier pour l'animation !
+- Symphony, pour leur incroyable cuisine !
+- Laszlo pour le développement du leaderboard.
+- Lola Elisalde pour l'énorme gestion de la logistique.
+- Timothée Chauvin, Elias Schmidt et Gautier Ducurtil pour le beta-testing du hackathon.
+- Merci à Alexandre, JS et toutes les autres personnes qui nous ont aidé à développer le sujet.
+- Diego et son frère, pour avoir fourni un sujet de secours.
+- L'administration de l'Ecole42 qui a aidé à la logistique.
  
 [1] Shah, Harshay, et al. "The pitfalls of simplicity bias in neural networks." Advances in Neural Information Processing Systems 33 (2020): 9573-9585.
  
-
-
-
-
 
 
 
