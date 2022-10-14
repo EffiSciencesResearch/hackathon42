@@ -103,10 +103,8 @@ Note, a GPU with CUDA is not critical for this tutorial, as a CPU will not take 
  
 #### 00_toy_dataset (1pts)
  
-This dataset is a simple linear regression. This dataset corresponds to the simplest possible illustration of our problem. We have two features (x-axis and y-axis) which are correlated in the labeled set. The features are not correlated in the unlabeled set and in the target set (these two are in grey in the figure).
- 
-![alt text](assets/Toy_dataset.png "Toy Dataset")
- 
+This dataset is a simple linear regression. This dataset corresponds to the simplest possible illustration of our problem. We have two features which are correlated in the labeled set. The features are not correlated in the unlabeled set and in the target set.
+
 #### 01_mnist_cc (1pt)
  
 We use the mnist dataset to simulate misspecified datasets.
