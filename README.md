@@ -91,8 +91,12 @@ Nous procédons ainsi pour encourager l'écriture de code reproductible et gén�
 En substance, nous allons simplement régénérer les ensembles de données avec une autre graine aléatoire. Il n'y aura pas de nouveaux types de jeux de données. Les participants sont donc encouragés à écrire le code le plus automatique possible.
  
 ## Installation
- 
-Veuillez installer git large file system avant de cloner le git. La taille du repo est d'environ 1GB.
+
+Vous pouvez travailler integralmeent sur google Colab car les ordinateur de l'école42 sont justes niveau mémoire.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/EffiSciencesResearch/hackathon42/blob/main/starting_pack_hackathon42.ipynb)
+
+ Veuillez installer git large file system avant de cloner le git. La taille du repo est d'environ 1GB.
  
 ```
 git lfs install
