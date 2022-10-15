@@ -220,7 +220,7 @@ res = requests.post("https://leaderboard42.herokuapp.com/reveal/", data={
        'username': 'my_awesome_team',
        'password': "my_password",
        'exercise_id': 0,
-       'datum_id': 4
+       'datum_id': 4  # label requested from the val dataset.
    })
  
 try:
@@ -488,7 +488,7 @@ res = requests.post("https://leaderboard42.herokuapp.com/reveal/", data={
        'username': 'my_awesome_team',
        'password': "my_password",
        'exercise_id': 0,
-       'datum_id': 4
+       'datum_id': 4  # label requested from the val dataset.
    })
  
 try:
