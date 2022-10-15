@@ -241,7 +241,7 @@ Allez sur https://leaderboard42.herokuapp.com/
  
 Et cliquez sur un exercice, et soumettez votre solution.
  
-Un exemple de format de soumission est [here](exemple_submision.csv). La soumission est un csv sans en-tête et sans colonne d'index. Il s'agit simplement de la liste des étiquettes de l'ensemble de validation. Vous devez soumettre un .csv et non un .txt.
+Un exemple de format de soumission est [here](example_submission.csv). La soumission est un csv sans en-tête et sans colonne d'index. Il s'agit simplement de la liste des étiquettes de l'ensemble de validation. Vous devez soumettre un .csv et non un .txt.
  
 ### Résolution de problèmes
  
