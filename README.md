@@ -186,7 +186,7 @@ L'"oiseau" ou le "chat" à côté d'un "avion" ou d'une "voiture".
 Cet exercice et le suivant sont plus durs que les autres. Le score par défaut est donc de 0.5 et non de 0.8.
 ### Human datasets (6pts)
  
-Ce jeu de données (id=999) contient des images d'humains. Vous devrez partir d'un réseau neuronal pré-entraîné pour améliorer vos chances.
+Ce jeu de données (id=999) contient des images d'humains. Vous devrez partir d'un réseau neuronal pré-entraîné pour améliorer vos chances (C'est le seul dataset où partir d'un reseau prée-entrainé n'est pas pénalisé).
 Ce jeu de données n'est pas dans le même format que les deux autres pour des raisons de taille mémoire. Vous devrez dézipper le jeu de données pour commencer à travailler.
 Ce jeu de données nécessite l'utilisation d'un gpu (contrairement aux autres jeux de données), par exemple via google colab. Vous pouvez sauvegarder votre gpu colab pour l'utiliser sur ce jeu de données.
 
