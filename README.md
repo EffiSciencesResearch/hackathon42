@@ -107,7 +107,7 @@ Notez qu'un GPU avec CUDA n'est pas indispensable pour ce tutoriel, un simple CP
  
 #### 00_toy_dataset (1pts)
  
-Cet ensemble de données est une régression linéaire simple. Ce jeu de données correspond à l'illustration la plus simple possible de notre problème. Nous avons deux caractéristiques (axe des x et axe des y) qui sont corrélées dans l'ensemble étiqueté. Les caractéristiques ne sont pas corrélées dans l'ensemble non étiqueté et dans le target set (ces deux éléments sont en gris sur la figure).
+Cet ensemble de données est une régression linéaire simple. Ce jeu de données correspond à l'illustration la plus simple possible de notre problème. Nous avons deux caractéristiques (axe des x et axe des y) qui sont corrélées dans l'ensemble étiqueté. Les caractéristiques ne sont pas corrélées dans l'ensemble non étiqueté et dans le target set.
  
 #### 01_mnist_cc (1pt)
  
@@ -164,7 +164,6 @@ Identique à 06_mnist_sum mais nous additionnons 3 images.
 #### 08_mnist_sum_noise_level (1pts)
  
 Nous utilisons le niveau du bruit gaussien comme biais de simplicité.
- 
  
 ### Mysterious datasets (3pts each)
  
