@@ -183,6 +183,7 @@ L'animal se trouve soit à gauche, soit à droite du véhicule.
 L'"oiseau" ou le "chat" à côté d'un "avion" ou d'une "voiture".
 (id=888)
 
+Cet exercice et le suivant sont plus durs que les autres. Le score par défaut est donc de 0.5 et non de 0.8.
 ### Human datasets (6pts)
  
 Ce jeu de données (id=999) contient des images d'humains. Vous devrez partir d'un réseau neuronal pré-entraîné pour améliorer vos chances.
@@ -450,6 +451,8 @@ Datasets (23 and 456) contain the embeddings of mnist digits. You won't be able 
 The animal is either to the left or right of the vehicle.
 The "bird" or "cat" is next to a "plane" or "car".
 (id=888)
+
+This exercise and the next one are harder than the others. The default score is therefore 0.5 and not 0.8.
  
 ### Human datasets (6pts)
  
