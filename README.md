@@ -176,8 +176,14 @@ Vous ne pourrez soumettre et collecter les 5 étiquettes sur le dataset 12 que p
  
 Les jeux de données (23 et 456) contiennent les embeddings des chiffres mnists. Vous ne serez pas en mesure d'inspecter ces jeux de données ^^.
 (Les identifiants de ces jeux de données sont 23 et 456)
- 
-### Human datasets (5pts)
+
+### Vehicle-Animal (5pts)
+
+L'animal se trouve soit à gauche, soit à droite du véhicule.
+L'"oiseau" ou le "chat" à côté d'un "avion" ou d'une "voiture".
+(id=888)
+
+### Human datasets (6pts)
  
 Ce jeu de données (id=999) contient des images d'humains. Vous devrez partir d'un réseau neuronal pré-entraîné pour améliorer vos chances.
 Ce jeu de données n'est pas dans le même format que les deux autres pour des raisons de taille mémoire. Vous devrez dézipper le jeu de données pour commencer à travailler.
@@ -340,7 +346,7 @@ Evaluation criteria:
  
 Any neural network interpretability techniques used to understand neural network computation will be highly valued.
 If your solution is generic, and works across datasets, it will be valued by the jury prize.
- 
+
 Involvement and ideas proposed during the conferences and workshops will also be a criterion.
  
 ## The two phases of the hackathon
@@ -438,8 +444,14 @@ You will only be able to submit and collect the 5 labels on dataset 12 only duri
  
 Datasets (23 and 456) contain the embeddings of mnist digits. You won't be able to inspect those datasets ^^.
 (The id of those datasets are 23 and 456)
+
+### Vehicle-Animal (5pts)
+
+The animal is either to the left or right of the vehicle.
+The "bird" or "cat" is next to a "plane" or "car".
+(id=888)
  
-### Human datasets (5pts)
+### Human datasets (6pts)
  
 This dataset (id=999) contains images of humans. You will have to start from a pre-trained neural network to improve your chances.
 This dataset is not in the same format as the two others for memory size reasons. You will need to unzip the dataset to start working.
