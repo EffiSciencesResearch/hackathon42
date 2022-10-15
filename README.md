@@ -168,14 +168,13 @@ Nous utilisons le niveau du bruit gaussien comme biais de simplicité.
  
 ### Mysterious datasets (3pts each)
  
-En plus des autres jeux de données, nous ajoutons 2 jeux de données (12 et 13) qui peuvent être traités indépendamment du reste du hackathon.
+En plus des autres jeux de données, nous ajoutons 2 jeux de données (id=12 et id=13) qui peuvent être traités indépendamment du reste du hackathon.
  
 Vous ne pourrez soumettre et collecter les 5 étiquettes sur le dataset 12 que pendant la deuxième phase du hackathon.
  
 ### Embedding datasets (3pts each)
  
-Les jeux de données (23 et 456) contiennent les embeddings des chiffres mnists. Vous ne serez pas en mesure d'inspecter ces jeux de données ^^.
-(Les identifiants de ces jeux de données sont 23 et 456)
+Les jeux de données (id=23 et id=456) contiennent les embeddings des chiffres mnists. Vous ne serez pas en mesure d'inspecter ces jeux de données ^^.
 
 ### Vehicle-Animal (5pts)
 
