@@ -161,7 +161,7 @@ Identique à 01_mnist_cc mais on additionne les images de gauche et de droite (S
  
 Identique à 06_mnist_sum mais nous additionnons 3 images.
  
-#### 08_mnist_sum_noise_level (1pts)
+#### 08_mnist_sum_noise_level (2pts)
  
 Nous utilisons le niveau du bruit gaussien comme biais de simplicité.
  
@@ -171,18 +171,18 @@ En plus des autres jeux de données, nous ajoutons 2 jeux de données (id=12 et 
  
 Vous ne pourrez soumettre et collecter les 5 étiquettes sur le dataset 12 que pendant la deuxième phase du hackathon.
  
-### Embedding datasets (3pts each)
+### Embedding datasets (23 : 3pts, 456 : 4pts)
  
 Les jeux de données (id=23 et id=456) contiennent les embeddings des chiffres mnists. Vous ne serez pas en mesure d'inspecter ces jeux de données ^^.
 
-### Vehicle-Animal (5pts)
+### Vehicle-Animal (8pts)
 
 L'animal se trouve soit à gauche, soit à droite du véhicule.
 L'"oiseau" ou le "chat" à côté d'un "avion" ou d'une "voiture".
 (id=888)
 
 Cet exercice et le suivant sont plus durs que les autres. Le score par défaut est donc de 0.5 et non de 0.8.
-### Human datasets (6pts)
+### Human datasets (10pts)
  
 Ce jeu de données (id=999) contient des images d'humains. Vous devrez partir d'un réseau neuronal pré-entraîné pour améliorer vos chances (C'est le seul dataset où partir d'un reseau prée-entrainé n'est pas pénalisé).
 Ce jeu de données n'est pas dans le même format que les deux autres pour des raisons de taille mémoire. Vous devrez dézipper le jeu de données pour commencer à travailler.
