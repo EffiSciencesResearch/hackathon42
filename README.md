@@ -155,7 +155,7 @@ Ainsi, dans cet exercice, nous cherchons une méthode qui fonctionne même avec 
  
 #### 06_mnist_sum (1pts)
 
-Identique à 01_mnist_cc mais on additionne les images de gauche et de droite.
+Identique à 01_mnist_cc mais on additionne les images de gauche et de droite (Si les pixels initiaux sont entre [0, 1], on obtient des pixels entre [0, 2]).
  
 #### 07_mnist_sum_bis (1pts)
  
@@ -424,8 +424,9 @@ Thus, in this exercise, we seek a method that works even with a low mixing rate.
  
 #### 06_mnist_sum (1pts)
  
-Same as 01_mnist_cc but we sum the left and right images.
- 
+Same as 01_mnist_cc but we add the left and right images (If the initial pixels are between [0, 1], we obtain pixels between [0, 2]).
+
+
 #### 07_mnist_sum_bis (1pts)
  
 Same as 06_mnist_sum but we sum 3 images.
