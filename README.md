@@ -204,7 +204,7 @@ with the following form data:
 - `username`: `awesome_team`
 - `password`: `secret_password`
 - `exercise_id`: 3
-- `datum_id`: 456
+- `datum_id`: 456 
  
 Example request with cURL:
  
@@ -222,7 +222,7 @@ res = requests.post("https://leaderboard42.herokuapp.com/reveal/", data={
        'username': 'my_awesome_team',
        'password': "my_password",
        'exercise_id': 0,
-       'datum_id': 4  # label requested from the val dataset.
+       'datum_id': 4  # label requested from the val dataset. # the index begins at 0
    })
  
 try:
