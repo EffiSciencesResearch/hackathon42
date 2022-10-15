@@ -222,7 +222,7 @@ res = requests.post("https://leaderboard42.herokuapp.com/reveal/", data={
        'username': 'my_awesome_team',
        'password': "my_password",
        'exercise_id': 0,
-       'datum_id': 4  # label requested from the val dataset. # the index begins at 0
+       'datum_id': 4  # label requested from the val dataset. # the index begins at 0 and not 1
    })
  
 try:
