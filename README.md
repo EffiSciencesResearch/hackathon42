@@ -157,7 +157,7 @@ Ainsi, dans cet exercice, nous cherchons une méthode qui fonctionne même avec 
 
 Identique à 01_mnist_cc mais on additionne les images de gauche et de droite (Si les pixels initiaux sont entre [0, 1], on obtient des pixels entre [0, 2]).
  
-#### 07_mnist_sum_bis (1pts)
+#### 07_mnist_sum_bis (0pts) (Supprimé -> 0pts)
  
 Identique à 06_mnist_sum mais nous additionnons 3 images.
  
