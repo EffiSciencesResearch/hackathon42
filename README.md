@@ -255,7 +255,7 @@ Si vous voyez "ValueError : Cannot load file containing pickled data when allow_
  
 - Nous remercions l'Ecole42 et le Club AI de l'Ecole42 pour leur collaboration à l'organisation du hackathon.
 - Manuel Bimich pour l'idée du hackathon et les lourdes tâches administratives.
-- Quentin Didier et Charbel Cegerie pour la préparation et l'organisation du Hackathon.
+- Quentin Didier et Charbel Segerie pour la préparation et l'organisation du Hackathon.
 - Quentin Feuillat, Mathieu David et le club AI de 42 pour leur formation !
 - Esaïe Bauer et Joseph Barbier pour l'animation !
 - Symphony, pour leur incroyable cuisine !
